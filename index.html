@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just for You 💖</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #d63384;
+    }
+
+    #surprise {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #e6005c;
+    }
+
+    .heart {
+      font-size: 50px;
+      color: red;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click the Button 👇</h1>
+  <button onclick="handleClick()">Click Me</button>
+
+  <div id="surprise">
+    <div class="heart">❤️</div>
+    <h2>Surprise! 🎉</h2>
+    <p>You are the most special person in my life!<br>I made this with love, just for you 😊</p>
+  </div>
+
+  <script>
+    let clicks = 0;
+
+    function handleClick() {
+      clicks++;
+      if (clicks === 5) { // After 5 clicks
+        document.getElementById('surprise').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
